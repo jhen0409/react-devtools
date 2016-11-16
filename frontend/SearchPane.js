@@ -55,7 +55,7 @@ class SearchPane extends React.Component {
   onDocumentKeyDown(e) {
     if (e.keyCode === 191) { // forward slash
       var doc = ReactDOM.findDOMNode(this).ownerDocument;
-      if (!this.input || doc.activeElement === this.input) {
+      if (!this.input || doc.activeElement.nodeName === 'INPUT') {
         return;
       }
       this.input.focus();
